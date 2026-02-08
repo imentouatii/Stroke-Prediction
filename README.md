@@ -51,7 +51,7 @@ pip install -r requirements.txt
 Run the notebook `notebooks/heart_disease_prediction.ipynb` for data analysis, cleaning, and feature engineering.
 
 ### Train & Evaluate Models  
-Use the notebook or `src/train_model.py` to train classical ML models and the deep learning model. Evaluate performance using metrics like **accuracy**, **precision**, **recall**, and **F1-score**.
+Use the notebook or `src/train_compare_best.py` to train classical ML models and the deep learning model. Evaluate performance using metrics like **accuracy**, **precision**, **recall**, and **F1-score**.
 
 ### Blend Models for Better Performance  
 Combine predictions from multiple models (e.g., Random Forest + SVM + XGBoost) to boost accuracy.
@@ -103,6 +103,7 @@ The interface allows users to:
 - Expand dataset with additional patient info if available  
 
 ---
+
 
 
 
