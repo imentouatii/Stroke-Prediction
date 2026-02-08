@@ -1,0 +1,3 @@
+appt_id,created_at,datetime,date,hour,rdv_text,status,confirmed_at,cancelled_at,cancelled_by,patient_key,patient_uuid,patient_name,phone_e164,status_icon,risk_pct,priority_score
+a17a66d0-2402-4338-b2fe-33e0782c3aee,2026-02-07 12:01:37,2026-02-07 14:00,2026-02-07,14:00,Samedi 07/02/2026 à 14:00,CONFIRMÉ,2026-02-07 12:02:54,,,fares|bilel|+33589632149,4e332e72,bilel fares,+33589632149,🔴,73.7,0.887
+29233aa7-f832-4b23-9368-d280d1b49003,2026-02-07 12:11:10,2026-02-07 15:00,2026-02-07,15:00,Samedi 07/02/2026 à 15:00,CONFIRMÉ,2026-02-07 12:11:39,,,fares|sebihi|+33632589741,0ecada9d,sebihi fares,+33632589741,🔴,72.4,0.774

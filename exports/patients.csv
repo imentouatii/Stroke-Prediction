@@ -1,0 +1,3 @@
+timestamp,patient_uuid,patient_key,patient_name,phone_e164,status_icon,risk_pct,priority_score,rdv_status,rdv_text
+07/02/2026 12:01,4e332e72,fares|bilel|+33589632149,bilel fares,+33589632149,🔴,73.7,0.887,CONFIRMÉ,Samedi 07/02/2026 à 14:00
+07/02/2026 12:11,0ecada9d,fares|sebihi|+33632589741,sebihi fares,+33632589741,🔴,72.4,0.774,CONFIRMÉ,Samedi 07/02/2026 à 15:00
