@@ -21,38 +21,6 @@ The dataset contains vital clinical features like:
 We experimented with various classical machine learning models **and** a deep learning neural network.
 
 ---
-<!-- 
-
-## 📂 Project Structure
-
-heart_disease_prediction/
-
-├── data/
-
-│ └── heart.csv # Raw dataset with patient info
-
-├── notebooks/
-
-│ └── heart_disease_prediction.ipynb # EDA, modeling, evaluation
-
-├── models/
-
-│ └── saved_model.h5 # Trained deep learning model checkpoint
-
-├── src/
-
-│ ├── preprocessing.py # Data cleaning & feature engineering
-
-│ ├── train_models.py # Scripts to train classical & DL models
-
-│ └── utils.py # Helper functions for metrics & viz
-
-├── requirements.txt # Python dependencies
-
-└── README.md # This file
--->
-
----
 
 ## ⚙️ Installation
 
@@ -135,6 +103,7 @@ The interface allows users to:
 - Expand dataset with additional patient info if available  
 
 ---
+
 
 
 
