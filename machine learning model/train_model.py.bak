@@ -1,0 +1,104 @@
+print("=== Heart-Guard: training started ===")
+
+import joblib
+import pandas as pd
+
+from sklearn.model_selection import train_test_split
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.pipeline import Pipeline
+from sklearn.metrics import roc_auc_score, recall_score, precision_score, confusion_matrix, classification_report
+from xgboost import XGBClassifier
+
+DATA_PATH = "heart.csv"
+TARGET = "HeartDisease"
+RANDOM_STATE = 42
+
+def main():
+    # 1) Load data
+    df = pd.read_csv(DATA_PATH, sep=";")
+    df.columns = [c.strip() for c in df.columns]
+
+    print("Dataset loaded ✅")
+    print("Rows/Cols:", df.shape)
+    print("Columns:", list(df.columns))
+
+    if TARGET not in df.columns:
+        raise ValueError(f"Target '{TARGET}' not found. Columns: {list(df.columns)}")
+
+    # 2) Split X (inputs) and y (target)
+    X = df.drop(columns=[TARGET])
+    y = df[TARGET].astype(int)
+
+    print("\nPositive rate (HeartDisease=1):", round(y.mean(), 3))
+
+    # 3) Identify categorical vs numerical columns
+    cat_cols = X.select_dtypes(include=["object"]).columns.tolist()
+    num_cols = [c for c in X.columns if c not in cat_cols]
+
+    print("\nCategorical columns:", cat_cols)
+    print("Numeric columns:", num_cols)
+
+    # 4) Preprocessing: OneHot for categorical + passthrough numeric
+    preprocess = ColumnTransformer(
+        transformers=[
+            ("cat", OneHotEncoder(handle_unknown="ignore"), cat_cols),
+            ("num", "passthrough", num_cols)
+        ]
+    )
+
+    # 5) Handle imbalance (XGBoost best practice)
+    pos = int((y == 1).sum())
+    neg = int((y == 0).sum())
+    scale_pos_weight = neg / max(1, pos)
+
+    # 6) XGBoost model
+    xgb = XGBClassifier(
+        n_estimators=500,
+        max_depth=4,
+        learning_rate=0.05,
+        subsample=0.9,
+        colsample_bytree=0.9,
+        reg_lambda=1.0,
+        random_state=RANDOM_STATE,
+        eval_metric="logloss",
+        scale_pos_weight=scale_pos_weight
+    )
+
+    # 7) Pipeline = preprocess + model
+    model = Pipeline(steps=[
+        ("preprocess", preprocess),
+        ("clf", xgb)
+    ])
+
+    # 8) Train/Test split
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=RANDOM_STATE, stratify=y
+    )
+
+    # 9) Train
+    model.fit(X_train, y_train)
+
+    # 10) Evaluate
+    proba = model.predict_proba(X_test)[:, 1]
+    pred = (proba >= 0.5).astype(int)
+
+    roc = roc_auc_score(y_test, proba)
+    rec = recall_score(y_test, pred)
+    prec = precision_score(y_test, pred)
+    cm = confusion_matrix(y_test, pred)
+
+    print("\n=== Results (XGBoost) ===")
+    print("ROC-AUC:", round(roc, 4))
+    print("Recall :", round(rec, 4))
+    print("Precision:", round(prec, 4))
+    print("Confusion matrix:\n", cm)
+    print("\nClassification report:\n", classification_report(y_test, pred))
+
+    # 11) Save model
+    joblib.dump(model, "heart_guard_xgb.joblib")
+    print("\n✅ Saved model: heart_guard_xgb.joblib")
+    print("=== Training finished ===")
+
+if __name__ == "__main__":
+    main()

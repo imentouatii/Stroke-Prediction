@@ -1,0 +1,21 @@
+import joblib
+import pandas as pd
+
+model = joblib.load("heart_guard_xgb.joblib")
+
+X = pd.DataFrame([{
+    "Age": 45,
+    "Sex": "M",
+    "ChestPainType": "ATA",
+    "RestingBP": 130,
+    "Cholesterol": 240,
+    "FastingBS": 0,
+    "RestingECG": "Normal",
+    "MaxHR": 150,
+    "ExerciseAngina": "N",
+    "Oldpeak": 1.0,
+    "ST_Slope": "Up"
+}])
+
+print("Prediction:", model.predict(X)[0])
+print("Proba maladie:", model.predict_proba(X)[0][1])
