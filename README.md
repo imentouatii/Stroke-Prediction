@@ -93,6 +93,19 @@ The neural network model gave the results of ~90% accuracy with balanced precisi
 
 ---
 
+## 🖥️💻 Application Interface (Web & Desktop)
+
+In addition to the machine learning pipeline, this project includes an **interactive application** available as:
+
+- 🌐 **Web interface** for easy access via a browser  
+- 🖥️ **Desktop application** for offline or local use  
+
+The interface allows users to:
+- Input patient clinical data  
+- Get real-time **heart disease risk predictions**  
+- Visualize prediction results in a user-friendly manner  
+---
+
 ## 📊 Results
 - Random Forest achieved **~94% accuracy**
 - Deep Learning model achieved **~90% accuracy** 
@@ -123,5 +136,6 @@ The neural network model gave the results of ~90% accuracy with balanced precisi
 - Expand dataset with additional patient info if available  
 
 ---
+
 
 
