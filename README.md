@@ -18,7 +18,7 @@ The dataset contains vital clinical features like:
 - **Exercise Angina**  
 - And more...
 
-We experimented with various classical machine learning models **and** a deep learning neural network — with the deep learning model showing the best results! 🚀
+We experimented with various classical machine learning models **and** a deep learning neural network.
 
 ---
 <!-- 
@@ -59,7 +59,7 @@ heart_disease_prediction/
 1. **Clone the repo**
 
 ``` bash
-git clone https://github.com/yourusername/heart_disease_prediction.git
+git clone https://github.com/imentouatii/Heart-Disease-Detection.git
 cd heart_disease_prediction
 ```
 
@@ -123,4 +123,5 @@ The neural network model gave the results of ~90% accuracy with balanced precisi
 - Expand dataset with additional patient info if available  
 
 ---
+
 
