@@ -132,10 +132,10 @@ The interface allows users to:
 
 - Enhance deep learning architecture & tune hyperparameters further  
 - Add model explainability tools (e.g., SHAP, LIME) for clinical trust  
-- Deploy the model via a web app for real-time stroke risk prediction 
 - Expand dataset with additional patient info if available  
 
 ---
+
 
 
 
