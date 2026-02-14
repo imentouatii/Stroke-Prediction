@@ -2,7 +2,7 @@
 
 ## 💡 Overview
 
-This project focuses on predicting **heart disease risk** (a proxy for stroke) using clinical data from patients. The goal is to build a reliable machine learning tool that can assist healthcare professionals in early detection.
+This project focuses on predicting **heart disease risk** using clinical data from patients. The goal is to build a reliable machine learning tool that can assist healthcare professionals in early detection.
 
 > ⚠️ This project is **for educational and research purposes only** and is **not intended for clinical diagnosis**.
 
@@ -103,6 +103,7 @@ The interface allows users to:
 - Expand dataset with additional patient info if available  
 
 ---
+
 
 
 
