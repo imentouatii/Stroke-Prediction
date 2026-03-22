@@ -1,13 +1,13 @@
-# 🩺 Heart Disease Risk Prediction 🩺
+# Heart Disease Risk Prediction
 
-## 💡 Overview
+## Overview
 
 This project focuses on predicting **heart disease risk** using clinical data from patients. The goal is to build a reliable machine learning tool that can assist healthcare professionals in early detection.
 
 > ⚠️ This project is **for educational and research purposes only** and is **not intended for clinical diagnosis**.
 
 
-## 📊 Dataset Description
+## Dataset Description
 The dataset contains vital clinical features like:
 
 - **Age**  
@@ -22,7 +22,7 @@ We experimented with various classical machine learning models **and** a deep le
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 1. **Clone the repo**
 
@@ -45,7 +45,7 @@ pip install -r requirements.txt
 
 
 
-## 🚀 Usage
+## Usage
 
 ### Explore & Preprocess Data  
 Run the notebook `notebooks/heart_disease_prediction.ipynb` for data analysis, cleaning, and feature engineering.
@@ -61,12 +61,12 @@ The neural network model gave the results of ~90% accuracy with balanced precisi
 
 ---
 
-## 🖥️💻 Application Interface (Web & Desktop)
+## Application Interface (Web & Desktop)
 
 In addition to the machine learning pipeline, this project includes an **interactive application** available as:
 
-- 🌐 **Web interface** for easy access via a browser  
-- 🖥️ **Desktop application** for offline or local use  
+-  **Web interface** for easy access via a browser  
+-  **Desktop application** for offline or local use  
 
 The interface allows users to:
 - Input patient clinical data  
@@ -74,7 +74,7 @@ The interface allows users to:
 - Visualize prediction results in a user-friendly manner  
 ---
 
-## 📊 Results
+## Results
 - Random Forest achieved **~94% accuracy**
 - Deep Learning model achieved **~90% accuracy** 
 - Classical models like Random Forest, SVM, and XGBoost scored around **88% accuracy**  
@@ -82,7 +82,7 @@ The interface allows users to:
 
 ---
 
-## 🛠 Dependencies
+## Dependencies
 
 - Python 3.8+  
 - pandas  
@@ -96,7 +96,7 @@ The interface allows users to:
 
 ---
 
-## 🔮 Next Steps
+## Next Steps
 
 - Enhance deep learning architecture & tune hyperparameters further  
 - Add model explainability tools (e.g., SHAP, LIME) for clinical trust  
